@@ -6,9 +6,7 @@ body {
     list-style-type: none;
     overflow-x: hidden;
 }
-p {
-    text-align: justify;
-}
+
 
 .img-container img {
     width: 50px;
