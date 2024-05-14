@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Waste management app</title>
+    <style>
+        .text-area {
+            width: 80%;
+            /* margin: 5%; */
+            /* margin-top: 5%; */
+            padding: 5%;
+        }
+
+        .submit-button {
+            width: 30%;
+            /* margin-left: 37%; */
+            margin-top: 5%;
+            background-color: green;
+            margin-left: 30%;
+            font-weight: 400;
+            font-size: 20px;
+            /* padding: 5%; */
+        }
+
+        .contact {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="form-sec">
+        <section class="contact" id="contact">
+            <div class="content">
+                <div class="contact-heading">
+                    <h6><Span class="contbtn">Send Your Message</Span></h6>
+                </div>
+                <form action="" class="" id="contactForm">
+                    <div>
+                        <label for=""></label>
+                        <textarea class="text-area" name="" id="message" rows="5"
+                            placeholder="Request for Our Services:" required></textarea>
+                    </div>
+                    <button class="submit-button" onclick="showAlert()">Submit</button>
+
+                    <div>
+                        <label for=""></label>
+                        <textarea class="text-area" name="" id="message" rows="5" placeholder="Leave Your Feedback:"
+                            required></textarea>
+                    </div>
+                    <!-- <button onClick = alert () class="submit-button">Submit</button> -->
+                    <!-- <button class="submit-button" onclick="this.parentElement.style.display='Done';">submit</button>
+                     -->
+                    <button class="submit-button" onclick="Alert()">Feedback</button>
+            </div>
+            </form>
+            </div>
+            </div>
+        </section>
+        <script>
+            function showAlert() {
+                alert("Thank You For Requesting, We Are At Your service.");
+            }
+            function Alert() {
+                alert("Thank you for Your Feedback.");
+            }
+        </script>
+
+</body>
+
+</html>
