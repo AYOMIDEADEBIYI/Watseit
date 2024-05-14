@@ -266,12 +266,12 @@ background-color:black ;
     line-height: 24px;
     font-weight: 400;
     color: #111827;
-    text-align: justify;
+    /* text-align: justify; */
     /* margin-top: 102px; */
 }
-p {
+/* p {
     text-align: justify;
-}
+} */
 
 /* section three */
 h2 {
