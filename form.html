@@ -7,9 +7,14 @@
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>Waste management app</title>
     <style>
-
+.contact-form {
+    max-width: 90%;
+    width: 45%;
+}
     </style>
 </head>
 <body>
@@ -48,44 +53,53 @@
                     </div>
                     <div class="contact-form">
                         
-                        <form action="" class="" id="contactForm">
+                        <form class="" id="signup-form">
                             <div class="inputField">
                                 <label for=""></label>
-                                <input id="name" type="text" class="input-field" placeholder="Name:" required>
+                                <input id="name" type="text" class="input-field" id="name" placeholder="Name:" required>
                             </div>
                             <div class="inputField">
                                 <label for=""></label>
-                                <input type="email" class="input-field" placeholder="Password:" required>
+                                <input type="email" class="input-field" id="email" placeholder="Email:" required>
                             </div>
                             <div class="inputField">
                                 <label for=""></label>
-                                <input type="email" class="input-field" placeholder="Email:" required>
+                                <input type="password" class="input-field" id="password" placeholder="Password:" required>
                             </div>
+                            <!-- <div class="inputField">
+                                <label for=""></label>
+                                <input type="location" class="input-field" id="location" placeholder="Location:" required>
+                            </div> -->
                             <div class="inputField">
                                 <label for=""></label>
-                                <input type="location" class="input-field" placeholder="Location:" required>
+                                <input type="number" class="input-field" id="phone-number" placeholder="Phone Number:" required>
                             </div>
-                            <div class="inputField">
-                                <label for=""></label>
-                                <input type="number" class="input-field" placeholder="Phone Number:" required>
-                            </div>
-                            <div class="inputField">
+                            <!-- <div class="inputField">
                                 <label for=""></label>
                                 <input type="location" class="input-field" placeholder="LGA:" required>
-                            </div>
+                            </div> -->
+                            <p class="error"></p>
                             <!-- <div>
                                 <label for=""></label>
                                 <textarea class="text-area" name="" id="message" rows="5"
                                     placeholder="Message" required></textarea>
                             </div> -->
                             <div>
-                                <input type="submit" value="Submit" class="submit-button">
+                                <button class="submit-button" id="signup-submit" type="submit">Submit</button>
                             </div>
                         </form>
+                        <p style="text-align: center;">Already have an account? <a href="signin.html">Sign in</a></p>
+                        <!-- <div class="idnumber-container">
+                            <h4>Your ID Number is:</h4>
+                            <h5 class="idnumber"></h5>
+                            <a href="signin.html" type="submit">Sign in with your ID</a>
+                        </div> -->
                     </div>
                 </div>
             </div>
         </section>
     </section>
+
+    <script type="module" src="auth.js"></script>
 </body>
 </html>

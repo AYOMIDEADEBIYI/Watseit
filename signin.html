@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +8,17 @@
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>Waste management app</title>
     <style>
-        .input-field{
+        .input-field {
             width: 40%;
             margin-left: 30%;
             margin-top: 5%;
         }
-        .submit-button{
+
+        .submit-button {
             width: 30%;
             margin-left: 37%;
             margin-top: 10%;
@@ -27,6 +31,7 @@
         }
     </style>
 </head>
+
 <body>
     <section class="form-sec">
         <section class="contact" id="contact">
@@ -34,22 +39,25 @@
                 <div class="contact-heading">
                     <h6><Span class="contbtn">Sign in</Span></h6>
                 </div>
-                <form action="" class="" id="contactForm">
+                <form class="" id="login-form">
                     <div class="inputField">
                         <label for=""></label>
-                        <input id="name" type="text" class="input-field" placeholder="ID Number:" required>
+                        <input type="email" id="login-email" class="input-field" placeholder="Email:" required>
                     </div>
-              
+
                     <div class="inputField">
                         <label for=""></label>
-                        <input type="password" class="input-field" placeholder="Password:" required>
+                        <input type="password" id="login-password" class="input-field" placeholder="Password:" required>
                     </div>
-                        <button onClick ="document.location='comment.html'" class="submit-button">Submit</button>
-                    </div>
-                </form>
+                    <button class="submit-button" id="login-submit" type="submit">Submit</button>
+                    <p style="text-align: center;">Don't have an account? <a href="form.html">Sign up</a></p>
             </div>
-        </div>
-</section>
-    
+            </form>
+            </div>
+            </div>
+        </section>
+
+        <script type="module" src="auth.js"></script>
 </body>
+
 </html>

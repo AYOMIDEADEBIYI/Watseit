@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Waste management app</title>
+    <style>
+        .text-area {
+            width: 80%;
+            /* margin: 5%; */
+            /* margin-top: 5%; */
+            padding: 5%;
+        }
+
+        .submit-button {
+            width: auto;
+            /* margin-left: 37%; */
+            background-color: #6595d0;
+            border-radius: 5px;
+            color: #ffffff;
+            margin: 20px auto;
+            font-weight: 400;
+            font-size: 20px;
+            /* padding: 5%; */
+        }
+
+        .contact {
+            background-color: green;
+        }
+
+        .location-container {
+            display: none;
+            text-align: center;
+        }
+
+        p,
+        h6 {
+            color: white !important;
+        }
+        .greeting-container {
+            display: none;
+            align-items: center;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .greeting {
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="form-sec">
+        <section class="contact" id="contact">
+            <div class="content">
+                <div class="greeting-container">
+                    <h1 class="greeting"></h1>
+                    <button class="logout-btn">Logout</button>
+
+                </div>
+                <div class="contact-heading">
+                    <h6><Span class="contbtn">Request Service</Span></h6>
+                </div>
+                <form action="" class="" id="contactForm">
+                    <!-- <div>
+                        <label for="">Enter your location</label>
+                        <input class="input-field" type="text" name="location" >
+                    </div> -->
+                    <button id="location-button" type="button" class="submit-button">Locate the nearest trash site</button>
+
+
+                </form>
+                <div class="location-container">
+                    <p>The nearest trash site is in:</p>
+                    <h6 class="trash-location"></h6>
+                </div>
+                
+            </div>
+            </div>
+            </div>
+        </section>
+        <!-- <script type="module" src="auth.js"></script> -->
+        <script type="module" src="index.js"></script>
+
+</body>
+
+</html>

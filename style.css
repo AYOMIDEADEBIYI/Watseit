@@ -381,6 +381,7 @@ h6 {
     font-size: 42px;
     /* color: #f3f4f6; */
     color: #111827;
+    margin-block: 20px;
 }
 
 .content {
@@ -442,7 +443,7 @@ form {
     border: none;
     padding: .5em 0 .5em 1em;
     border-radius: 6px;
-    width: 200%;
+    width: 100%;
 }
 
 .text-area{
@@ -451,7 +452,13 @@ form {
     border: none;
     padding: .5em 0 .5em 1em;
     border-radius: 6px;
-    width: 200%;
+    width: 100%;
+}
+
+label {
+    margin-bottom: 10px;
+    display: inline-block;
+    color: #FFF;
 }
 
 .contact-heading {
@@ -511,6 +518,23 @@ form {
     background-color: black;
 }
 
+.submit-button:disabled {
+    background-color: #8baed8;
+    color: #cdcdcd;
+}
+
+.idnumber-container {
+    display: none;
+}
+
+.greeting {
+    font-size: 32px;
+    text-align: center;
+    color: white;
+    margin-top: 56px;
+    text-transform: capitalize;
+}
+
 .BtnApp{
     padding: 15px;
     background-color: #6595d0;
@@ -547,7 +571,11 @@ form {
 }
 
 .createBtn:hover{
-    background-color:black;  
+    background-color:rgb(0, 0, 0);  
+}
+
+.error {
+    color: rgb(255, 66, 66);
 }
 
 button {
