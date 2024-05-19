@@ -58,7 +58,9 @@ const checkAuthState = () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
       greetingContainer.style.display = "flex";
-      greeting.innerHTML = `Welcome ${user.displayName}!`;
+      greeting.innerHTML = `Welcome ${
+        user.displayName ?? storedUser.displayName
+      }!`;
       return;
     } else {
       if (greetingContainer) {

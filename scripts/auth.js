@@ -1,4 +1,4 @@
-// import { auth, app, database } from "./firebase";
+// import { auth, app, database } from "./firebase.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import {
   getAuth,
@@ -27,14 +27,15 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-export default auth;
 const database = getDatabase(app);
+export default auth;
 
 const signupForm = document.getElementById("signup-form");
 const submitButton = document.getElementById("signup-submit");
 const idContainer = document.querySelector(".idnumber-container");
 const idNumber = document.querySelector(".idnumber");
 
+//signup handler
 signupForm?.addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -46,7 +47,7 @@ signupForm?.addEventListener("submit", async (e) => {
   const { value: phoneNumber } = signupForm["phone-number"];
 
   submitButton.disabled = true;
-  submitButton.textContent = "Submitting";
+  submitButton.textContent = "Submitting...";
   try {
     const cred = await createUserWithEmailAndPassword(auth, email, password);
     updateProfile(auth.currentUser, {
@@ -60,8 +61,7 @@ signupForm?.addEventListener("submit", async (e) => {
         return;
       });
 
-    // create user document.
-
+    // Add user to database.
     set(ref(database, "users/" + cred.user.uid), {
       name,
       email,
@@ -94,6 +94,7 @@ const logout = document.querySelector(".logout-btn");
 logout?.addEventListener("click", async (e) => {
   e.preventDefault();
   await signOut(auth);
+  localStorage.clear();
 });
 
 // login handler.
@@ -107,7 +108,7 @@ login?.addEventListener("submit", async (e) => {
   const { value: password } = login["login-password"];
 
   loginButton.disabled = true;
-  loginButton.textContent = "Submitting";
+  loginButton.textContent = "Submitting...";
   try {
     const cred = await signInWithEmailAndPassword(auth, email, password);
     localStorage.setItem("token", cred.user.accessToken);
@@ -131,14 +132,11 @@ const initToast = (text, theme) => {
     text: text,
     duration: 4000,
     close: true,
-    gravity: "top", // `top` or `bottom`
-    position: "right", // `left`, `center` or `right`
-    stopOnFocus: true, // Prevents dismissing of toast on hover
-    //   destination: "https://github.com/apvarun/toastify-js",
-    //   newWindow: true,
+    gravity: "top",
+    position: "right",
+    stopOnFocus: true,
     style: {
       background: theme === "success" ? "#00ca00" : "red",
     },
-    //   onClick: function () {}, // Callback after click
   }).showToast();
 };
