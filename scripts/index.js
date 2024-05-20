@@ -33,14 +33,13 @@ const successCallBack = async (position) => {
   locationBtn.style.display = "none";
   locationContainer.style.display = "block";
   trashLocation.innerHTML = userLocation.results[0].formatted;
-  //   setUserData(userLocation.results[0]);
 };
 
 const failureCallBack = (error) => {
   console.log("Error ===>", error);
 };
 
-locationBtn.addEventListener("click", (e) => {
+locationBtn?.addEventListener("click", (e) => {
   e.preventDefault();
   locationBtn.disabled = true;
   locationBtn.textContent = "Locating...";
@@ -57,17 +56,42 @@ const greeting = document.querySelector(".greeting");
 const checkAuthState = () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      greetingContainer.style.display = "flex";
-      greeting.innerHTML = `Welcome ${
-        user.displayName ?? storedUser.displayName
-      }!`;
-      return;
+      if (greetingContainer && greeting) {
+        greetingContainer.style.display = "flex";
+        greeting.innerHTML = `Welcome ${
+          user.displayName ?? storedUser.displayName
+        }!`;
+        return;
+      }
     } else {
       if (greetingContainer) {
         greetingContainer.style.display = "none";
       }
-      window.location.href = "signin.html";
+      if (window.location.href === "request-service.html") {
+        window.location.href = "signin.html";
+      }
     }
   });
 };
 checkAuthState();
+
+const contactForm = document.getElementById("contactForm");
+contactForm?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  initToast("Thank you for contacting us, We'll get back to you.", "success");
+  contactForm.reset();
+});
+
+const initToast = (text, theme) => {
+  return Toastify({
+    text: text,
+    duration: 4000,
+    close: true,
+    gravity: "top",
+    position: "right",
+    stopOnFocus: true,
+    style: {
+      background: theme === "success" ? "#00ca00" : "red",
+    },
+  }).showToast();
+};

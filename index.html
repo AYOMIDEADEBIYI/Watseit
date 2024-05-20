@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>Document</title>
 </head>
 <body>
@@ -39,8 +41,7 @@
                             areas. Locating of waste dumping site using an interactive map tool and recycle with
                             ease.</p>
                         <div class="btn-flex">
-                            <button onclick="document.location='form.html'" class="createBtn">Create An
-                                Account</button>
+                            <button onclick="document.location='form.html'" class="createBtn">Sign up</button>
                             <button onclick="document.location='signin.html'" class="createBtn">Sign in</button>
                         </div>
                     </div>
@@ -234,18 +235,10 @@
                         </div>
                         <div class="contact-form">
 
-                            <form action="" class="" id="contactForm">
-                                <div class="inputField">
-                                    <label for=""></label>
-                                    <input id="name" type="text" class="input-field" placeholder="Name" required>
-                                </div>
+                            <form id="contactForm">
                                 <div class="inputField">
                                     <label for=""></label>
                                     <input type="email" class="input-field" placeholder="Email" required>
-                                </div>
-                                <div class="inputField">
-                                    <label for=""></label>
-                                    <input type="location" class="input-field" placeholder="Location" required>
                                 </div>
                                 <div>
                                     <label for=""></label>
@@ -253,7 +246,7 @@
                                         required></textarea>
                                 </div>
                                 <div>
-                                    <input type="submit" value="Submit" class="submit-button">
+                                    <button type="submit" class="submit-button">Submit</button>
                                 </div>
                             </form>
                         </div>
@@ -286,5 +279,7 @@
             </div>
         </div>
     </footer>
+
+    <script type="module" src="scripts/index.js"></script>
 </body>
 </html>

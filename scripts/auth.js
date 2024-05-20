@@ -5,7 +5,6 @@ import {
   createUserWithEmailAndPassword,
   updateProfile,
   signInWithEmailAndPassword,
-  onAuthStateChanged,
   signOut,
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import {
@@ -32,8 +31,6 @@ export default auth;
 
 const signupForm = document.getElementById("signup-form");
 const submitButton = document.getElementById("signup-submit");
-const idContainer = document.querySelector(".idnumber-container");
-const idNumber = document.querySelector(".idnumber");
 
 //signup handler
 signupForm?.addEventListener("submit", async (e) => {
@@ -61,7 +58,7 @@ signupForm?.addEventListener("submit", async (e) => {
         return;
       });
 
-    // Add user to database.
+    // Add user to firestore database.
     set(ref(database, "users/" + cred.user.uid), {
       name,
       email,
@@ -71,20 +68,16 @@ signupForm?.addEventListener("submit", async (e) => {
     initToast("Sign up successful", "success");
 
     submitButton.disabled = false;
-    submitButton.textContent = "Submit";
+    submitButton.textContent = "Sign up";
     setTimeout(() => {
       window.location.href = "request-service.html";
     }, 2000);
-    // signupForm.style.display = "none";
-    // idContainer.style.display = "block";
-    // idNumber.innerHTML = cred.user.uid;
 
     signupForm.reset();
-    signupForm.querySelector(".error").innerHTML = "";
   } catch (error) {
     initToast(error.message, "error");
     submitButton.disabled = false;
-    submitButton.textContent = "Submit";
+    submitButton.textContent = "Sign up";
   }
 });
 
@@ -115,7 +108,7 @@ login?.addEventListener("submit", async (e) => {
     initToast("Sign in successful", "success");
 
     loginButton.disabled = false;
-    loginButton.textContent = "Submit";
+    loginButton.textContent = "Log in";
     setTimeout(() => {
       window.location.href = "request-service.html";
     }, 2000);
@@ -123,7 +116,7 @@ login?.addEventListener("submit", async (e) => {
   } catch (error) {
     initToast(error.message, "error");
     loginButton.disabled = false;
-    loginButton.textContent = "Submit";
+    loginButton.textContent = "Log in";
   }
 });
 
