@@ -183,6 +183,7 @@ nav a {
 
 .demoBtn {
     margin-left: 60px;
+    text-decoration: none;
 }
 #demoBtn {
     background-color: black;
@@ -190,6 +191,7 @@ nav a {
     color: white;
     transition: .4s ease-in-out;
     border: black;
+    text-decoration: none;
     
     /* border: 1px solid black; */
 }
