@@ -67,7 +67,7 @@ const checkAuthState = () => {
       if (greetingContainer) {
         greetingContainer.style.display = "none";
       }
-      if (window.location.href === "request-service.html") {
+      if (window.location.pathname === "/request-service.html") {
         window.location.href = "signin.html";
       }
     }
